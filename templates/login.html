@@ -1,0 +1,18 @@
+{% from 'form-helper.html' import displayField %}
+{% extends 'prelogin-layout.html' %}
+
+{% block title %} Login {% endblock %}
+
+{% block content %} 
+	<h1> Login Now!</h1>
+	<p> enter your user name and password to start the chat </p>
+	
+	<form action="{{ url_for('login')}}" , method="POST">
+			{{displayField(form.username,'User Name',autocomplete=false,autofocus=true)}}
+			{{displayField(form.password,'Password')}}
+		<div>
+			{{ form.submit_button }}	
+		</div>
+		{{ form.csrf_token }}
+	</form>
+{% endblock %}
