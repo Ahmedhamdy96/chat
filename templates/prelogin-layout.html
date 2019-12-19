@@ -5,6 +5,14 @@
 		<title> {% block title %}{% endblock %}</title>
 	</head>
 	<body>
+		<!-- Flashed Messages -->
+		{% with messages = get_flashed_messages(with_categories=true) %}
+			{% if messages %}
+				Category : {{ messages[0][0] }}
+				{{ messages[0][1] }}
+			{% endif %}
+		{% endwith %}
+		
 		{% block content %}
 		
 		{% endblock %}
