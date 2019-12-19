@@ -1,0 +1,66 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<!-- navigation bar  -->
+		<nav> 
+		</nav>
+		<div id="main-section">
+			<!-- room selection sidebar -->
+			<nav id="sidebar">
+				<h4> Rooms </h4>
+				{% for room in rooms %}
+					<p class="select-room"> {{ room|title }} </p>
+				{% endfor %}
+			</nav>
+			<!-- message area -->
+			<div id="rightside-pannel">
+				<!-- display message -->
+				<div id="display-message-section">
+					
+
+				</div>
+				<!-- typing area -->
+				<div id="input-area">
+					<input type="text" id="user_message" placeholder="Type a message" autocomplete="off">
+					<button type="button" id="send_message"> Send </button>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- get username -->
+		<script type="text/javascript">
+			const username = `{{ username }}` ; 
+		</script>
+
+		<!-- custom chat JS -->
+		<script src="{{ url_for('static' , filename='scripts/chat_page.js') }}"></script>
+		<!-- Javascript SocketIO -->
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+		
+		<!-- custom Javascript SocketIO -->
+		<script src="{{ url_for('static' , filename='scripts/socketio.js')}}" type="text/javascript">
+			
+		</script>
+
+
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
